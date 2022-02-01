@@ -4,5 +4,5 @@
     URL: play.example.com
   tasks:
     - name: Print URL
-       ansible.builtin.debug:
-         msg: URL = {{URL}}
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
