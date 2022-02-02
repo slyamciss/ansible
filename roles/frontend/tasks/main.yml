@@ -9,4 +9,18 @@
     dest: /tmp
     remote_src: yes
     
+- name: Remove previous content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+ 
+- name: Copy Roboshop Content
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
     
+- name: start Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restart
+    enabled: yes
