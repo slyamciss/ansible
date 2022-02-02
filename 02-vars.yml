@@ -90,5 +90,5 @@
       
     - name: Print UPTIME_STDOUT
       ansible.builtin.debug:
-        msg: UPTIME_STDOUT
+        msg: "{{UPTIME_STDOUT}}"
         
