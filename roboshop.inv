@@ -1,3 +1,11 @@
 [FRONTEND]
 frontend.roboshop.internal
 [MONGODB]
+[CATALOGUE]
+[REDIS]
+[USER]
+[CART]
+[MYSQL]
+[SHIPPING]
+[PAYMENT]
+[DISPATCH]
