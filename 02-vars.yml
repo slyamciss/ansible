@@ -1,3 +1,9 @@
+## Number 1 is Command line Variables
+## Number 2 is Task Level Variables
+## Number 3 is Variables from files
+## Number 4 Play level Variables
+## Number 5 is Inventory Variables
+
 - name: Variable on Play level
   hosts: all
   vars:
@@ -55,3 +61,11 @@
         msg: URL == {{URL}}
       vars:
         URL: task.example.com
+        
+## Print Hostname of remote note
+- name: Print Hostname of remote node
+  hosts: all
+  tasks:
+    - name: print Hostname
+      ansible.builtin.debug:
+        msg: Hostname = {{ansible_hostname}}
