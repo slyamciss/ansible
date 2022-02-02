@@ -1,0 +1,6 @@
+- name: Demo on Loops
+  hosts: local
+  tasks:
+    - name: Demo
+      debug:
+        msg: Hello

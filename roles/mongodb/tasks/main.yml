@@ -19,3 +19,13 @@
     name: Mongod
     state: restarted
     enabled: yes
+    
+- name: Download Database Code
+  import_role:
+    name: common
+    tasks_from: Download
+    
+- name: Load schema - catalogue
+  community.mongo.mongodb_shell:
+    file:
+    idempotent: yes
