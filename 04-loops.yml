@@ -1,9 +1,15 @@
 - name: Demo on Loops
   hosts: localhost
   tasks:
-    - name: Demo
+    - name: Demo on list, Each value is string
       debug:
         msg: Hello, {{item}}
       loop:
         - bilal
         - Tariq
+    - name: Demo on Map, Each value is a Map
+      debug:
+        msg: hello, {{item.name}}, welcome to {{item.course}} Training.
+      loop:
+        - {name: Bilal, course: devops}
+        - {name: Tariq, course: English}
