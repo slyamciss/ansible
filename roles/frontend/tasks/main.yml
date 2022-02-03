@@ -3,19 +3,32 @@
     name: nginx
     state: latest
 
+- name: Download Frontend from Git repo and Extract it
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
 - name: Remove previous content
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
 
-- name: Copy Roboshop Content
+- name: Copy RoboSHop Content
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
     remote_src: yes
 
-- name: start Nginx
+- name: Update RoboHSop Config
+  ansible.builtin.template:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: Start Nginx
   ansible.builtin.systemd:
     name: nginx
     state: restarted
     enabled: yes
+
+
