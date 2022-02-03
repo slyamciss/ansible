@@ -20,10 +20,10 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
-- name: Update RoboHSop Config
-  ansible.builtin.template:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
+#- name: Update roboshop Config
+#  ansible.builtin.template:
+#    src: roboshop.conf
+#    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Start Nginx
   ansible.builtin.systemd:
