@@ -1,6 +1,35 @@
-- name: Setup repo file for NodeJs project
+- name: Setup repo file for NodeJs
   ansible.builtin.copy:
     src: nodejs.repo
     dest: /etc/yum.repos.d/nodejs.repo
+    
+- name: Install NodeJs
+  ansible.builtin.yum:
+    name:
+      - nodejs
+      - gcc-c++
+    state: installed
+    
+- name: Add application User
+  ansible.builtin.user:
+    name: roboshop
+    state: present
+
+- name: Download App Code
+  ansible.builtin.import_role:
+    name: common
+    tasks: download
+    
+- name: Clean Old App code
+  ansible.builtin.file:
+    path: /home/roboshop/catalogue
+    state: absent
+    
+- name: Copy App Code
+  ansible.builtin.copy:
+    src: /tmp/catalogue-main/
+    dest: /home/roboshop/catalogue
+    remote_src: yes
+    
     
     
