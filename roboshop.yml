@@ -78,5 +78,13 @@
   roles:
     - dispatch
 
+- name: Setup Redis Component
+  hosts: REDIS
+  become: yes
+  tags:
+    - redis
+  roles:
+    - Redis
+
    
   
