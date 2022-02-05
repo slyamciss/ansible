@@ -84,7 +84,7 @@
   tags:
     - redis
   roles:
-    - Redis
+    - redis
 
    
   
