@@ -5,7 +5,7 @@
     - frontend
   roles:
     - frontend
-    
+
 - name: Setup MongoDB Component
   hosts: MONGODB
   become: yes
@@ -13,7 +13,7 @@
     - mongodb
   roles:
     - mongodb
-    
+
 - name: Setup Catalogue Component
   hosts: CATALOGUE
   become: yes
@@ -21,6 +21,14 @@
     - catalogue
   roles:
     - catalogue
+
+- name: Setup Redis Component
+  hosts: REDIS
+  become: yes
+  tags:
+    - redis
+  roles:
+    - redis
 
 - name: Setup User Component
   hosts: USER
@@ -37,7 +45,7 @@
     - cart
   roles:
     - cart
-    
+
 - name: Setup MySQL Component
   hosts: MYSQL
   become: yes
@@ -45,7 +53,7 @@
     - mysql
   roles:
     - mysql
-    
+
 - name: Setup Shipping Component
   hosts: SHIPPING
   become: yes
@@ -53,7 +61,7 @@
     - shipping
   roles:
     - shipping
-    
+
 - name: Setup RabbitMQ Component
   hosts: RABBITMQ
   become: yes
@@ -69,7 +77,7 @@
     - payment
   roles:
     - payment
-    
+
 - name: Setup Dispatch Component
   hosts: DISPATCH
   become: yes
@@ -77,14 +85,3 @@
     - dispatch
   roles:
     - dispatch
-
-- name: Setup Redis Component
-  hosts: REDIS
-  become: yes
-  tags:
-    - redis
-  roles:
-    - redis
-
-   
-  
