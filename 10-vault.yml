@@ -1,4 +1,4 @@
-- name: Valut
+- name: Vault
   hosts: localhost
   vars:
     PASS: !vault |
