@@ -5,3 +5,9 @@
   shell: curl  https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash
   when: APPTYPE == "app" or APPTYPE == "web"
   
+- name: Install Filbeat
+  ansible.builtin.import_role:
+    name: elk
+    tasks_from: filebeat
+  when: APPTYPE == "app" or APPTYPE == "web"
+  
