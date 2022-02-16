@@ -5,8 +5,8 @@
     
 - name: Install filebeat
   yum:
-    name: Filebeat
-    state: Installed
+    name: filebeat
+    state: installed
     
 - name: Configure Filebeat
   template:
