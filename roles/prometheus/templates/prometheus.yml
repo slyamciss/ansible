@@ -36,7 +36,7 @@ scrape_configs:
 {% raw %}
 #         access_key: {{AWS_ACCESS_KEY}}
 #         secret_key: {{AWS_SECRET_KEY}}
- {% endraw %}
+{% endraw %}
          port: 9100
          filters:
            - name: "tag:Monitor"
